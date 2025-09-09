@@ -94,7 +94,7 @@ B: "Lake Victoria is the smallest lake in Uganda",
 C: "80% of the Ugandans are Muslims"}
 
 var facts_6 ={A:"Kenya is home to Africa's second-highest mountain", B:"Sudan is a country in East-Africa", C:"Ethiopia native language is Arabic"}
-function Africa() {
+function africa() {
   console.log("");
   console.log("           _ /");
   console.log("   /\----_- - ");
@@ -107,7 +107,7 @@ function Africa() {
   console.log("        |     \\  ");
   console.log("         \__/        Africa ");
 }
-function Uganda() {
+function uganda() {
   console.log("");
   console.log("           _ /");
   console.log("   /\----_- - ");
@@ -267,7 +267,7 @@ function askQuestion(question_number){      //Starts runs the game
         console.clear();
         answer = prompt.question("Question 2");
         console.log('\x1b[32m%s\x1b[0m', 'Our country is famous for long-distance running and is one of the poorest countries in the world. \nMost people live from farming or work in the agricultural sector. \nAbout 70% of the land is used for agriculture.'); prompt.question("Press any key to continue\n")
-       Africa();
+       africa();
        console.log('\x1b[33m%s\x1b[0m',   '----------------------   ');
        console.log('\x1b[32m%s\x1b[0m', ' Pick your guess...');
        console.log('\x1b[33m%s\x1b[0m',   '----------------------   ');
@@ -305,7 +305,7 @@ function askQuestion(question_number){      //Starts runs the game
       console.clear();
       answer = prompt.question("Question 3"); //duvall - format question below
       console.log('\x1b[32m%s\x1b[0m', 'As a child, my parents would advise me not to enter certain areas as it was crowded with people and as a kid, I would walk to school barefoot, surprisingly this was good because it toughened my feet for long runs when we had local championship races. '); prompt.question("Press any key to continue\n")
-      Uganda();
+      uganda();
       console.log('\x1b[33m%s\x1b[0m',   '----------------------   ');
       console.log('\x1b[32m%s\x1b[0m', ' Pick your guess...');
       console.log('\x1b[33m%s\x1b[0m',   '----------------------   ');
