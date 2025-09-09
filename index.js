@@ -29,7 +29,7 @@ function saveGame(){
   const data = fs.writeFileSync('save _file.txt', write);
 }
 
-function load_game(){
+function loadGame(){
  let raw_data = fs.readFlieSync('save_file.txt');
   score = JSON.parse(raw_data);
  }
