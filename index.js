@@ -32,9 +32,7 @@ function saveGame(){
 function loadGame(){
  let raw_data = fs.readFlieSync('save_file.txt');
   score = JSON.parse(raw_data);
- }
-
-
+}
 
 function flame() {
   console.log("");
@@ -48,7 +46,6 @@ function flame() {
   console.log("   (_,) . ), ) _) _,')  (, ) '. )  ,. (' )");
   console.log(" ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
 }
-
 
 function flag() {
   console.log("");
@@ -68,7 +65,7 @@ function flag() {
   console.log(" '==''---))))");
 }
 
- flag();
+flag();
 for(let i = 0; i < 5; i ++){
   console.log(array);
 }//if 0 is less than 5 which it is then it will run the array
@@ -149,7 +146,7 @@ function options(){
 function coins(rules){
 
 }
-function World_globe(text){
+function worldGlobe(text){
     console.log("");
     console.log("");
     console.log("          ,-:` \\;\\',`'-, ");
@@ -161,7 +158,7 @@ function World_globe(text){
     console.log("       \     | .'     `-\\'/");
     console.log("        `.   ;/       .'");
     console.log("           ` '-._____.");
-  }
+}
 
 
 //World globe
@@ -389,7 +386,7 @@ function askQuestion(question_number){      //Starts runs the game
 var fireRoundTally = [0,1,2,3] //keep track of questions that have been used
 var fireRoundTracker = 0 //keeps track of how many times function has been used
 
-function generate_number(){
+function generateNumber(){
   //Math.floor(Math.random() * (MAX - MIN) + MIN);
   var question_math = Math.floor(Math.random() * (4 - 0) + 0);
   if (fireRoundTally[question_math] == question_math){ //if the random num is equal to the index of the array
@@ -403,7 +400,7 @@ function generate_number(){
     return;
   }
   else {
-    generate_number(); //indirectly creates a loop so the random number has to be passed to the 'fire round' function before it stops it self
+    generateNumber(); //indirectly creates a loop so the random number has to be passed to the 'fire round' function before it stops it self
   }
 }
 
@@ -427,13 +424,13 @@ function fireRound(question_number) {
         score += 10;
         console.log("Current score is..." + score);
         answer = prompt.question("Please press enter for the next question....");
-         fireRound(generate_number());
+         fireRound(generateNumber());
       }else if (answer == "b" || answer == "c") {
         console.log("\nYOU'RE NOT QUITE CLOSE!");
         console.log("Current score is..." + score);
         console.log("A was the answer!");
         answer = prompt.question("Please press enter for the next question....");
-        fireRound(generate_number());
+        fireRound(generateNumber());
       }else{
         console.log("That didn't work, please try again. ")  
           fireRound(0);
@@ -459,13 +456,13 @@ function fireRound(question_number) {
         score += 10;
         console.log("Current score is..." + score);
         answer = prompt.question("Please press enter for the next question....");
-        fireRound(generate_number());
+        fireRound(generateNumber());
       }else if (answer == "a" || answer == "c" ) {
         console.log("\nYOU'RE NOT QUITE CLOSE!");
         console.log("Current score is..." + score);
         console.log("B was the answer!");
         answer = prompt.question("Please press enter for the next question....");
-        fireRound(generate_number());
+        fireRound(generateNumber());
       }else{
         console.log("That didn't work, please enter A or B or C. ")  
           fireRound(0);
@@ -493,13 +490,13 @@ function fireRound(question_number) {
         score += 10;
         console.log("Current score is..." + score);
         answer = prompt.question("Please press enter for the next question....");
-        fireRound(generate_number());
+        fireRound(generateNumber());
       }else if (answer == "b" || answer == "c" ) {
         console.log("\nYOU'RE NOT QUITE CLOSE!");
         console.log("Current score is..." + score);
         console.log("A was the answer!");
         answer = prompt.question("Please press enter for the next question....");
-        fireRound(generate_number());
+        fireRound(generateNumber());
       }else{
         console.log("That didn't work, please try again. ")  
           fireRound(1);
@@ -527,12 +524,12 @@ function fireRound(question_number) {
         score += 10;
         console.log("Current score is..." + score);
         answer = prompt.question("Please press enter for the next question....");
-        fireRound(generate_number());
+        fireRound(generateNumber());
       }else if (answer == "a" || answer == "c" ) {
         console.log("\nYOU'RE NOT QUITE CLOSE!");
         console.log("B was the answer!");
         answer = prompt.question("Please press enter for the next question....");
-        fireRound(generate_number());
+        fireRound(generateNumber());
       }else{
         console.log("That didn't work, please try again. ")  
          fireRound(2);
@@ -560,13 +557,13 @@ function fireRound(question_number) {
         score += 10;
         console.log("Current score is..." + score);
         answer = prompt.question("Please press enter for the next question....");
-        fireRound(generate_number());
+        fireRound(generateNumber());
       }else if (answer == "b" || answer == "c" ) {
         console.log("\nYOU'RE NOT QUITE CLOSE!");
         console.log("Current score is..." + score);
         console.log("A was the answer!");
         answer = prompt.question("Please press enter for the next question....");
-        fireRound(generate_number());
+        fireRound(generateNumber());
       }else{
         console.log("That didn't work, please try again. ")  
         fireRound(3);
@@ -614,27 +611,27 @@ function fireRound(question_number) {
 
       if (score >= 0 && score <= 45){
         console.clear();
-        World_globe();
+        worldGlobe();
         console.log("You're a Rookie");
       }
       else if (score >= 45 && score <= 65){
         console.clear();
-         World_globe();
+         worldGlobe();
         console.log("You're a Amateur");
       }
       else if (score >= 65 && score <= 85){
         console.clear();
-        World_globe();
+        worldGlobe();
         console.log("You're an All Star");
       }
       else if (score >= 85 && score <= 99){
         console.clear();
-        World_globe();
+        worldGlobe();
         console.log("You're a Superstar");
       }
       else if (score >= 100){
         console.clear();
-        World_globe();
+        worldGlobe();
         console.log("You're a master");
       }
 
