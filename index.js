@@ -120,7 +120,7 @@ function Uganda() {
   console.log("        |     \\  ");
   console.log("         \__/        Uganda ");
 }
-function ask_question(){
+function askQuestion(){
     answer = prompt.question("Please type in your answer...");
     if(answer ==  "Africa" || answer == "africa"){
       console.log("YOU WERE RIGHT!");
@@ -191,7 +191,7 @@ function delay(message,time){
   }, time);
 }
 
-function ask_question(question_number){      //Starts runs the game
+function askQuestion(question_number){      //Starts runs the game
 
   switch(question_number){
     case "start":
@@ -215,7 +215,7 @@ function ask_question(question_number){      //Starts runs the game
 
 
       answer = prompt.question("Please press enter to continue \n");
-      ask_question(0); 
+      askQuestion(0); 
     break;
 
     case 0: //Choice of which continents.
@@ -246,16 +246,16 @@ function ask_question(question_number){      //Starts runs the game
         score += 10;
         console.log("Current score is... " + score);
         answer = prompt.question("Please press enter to continue...");
-        ask_question(1);
+        askQuestion(1);
       }else if (answer == "south america" || answer == "north america"){
         console.log("\nYOUR NOT QUITE CLOSE!.");
         console.log("Africa was the answer!");
         console.log("Current score is... " + score);
         answer = prompt.question("Please press enter to continue...");
-        ask_question(1);
+        askQuestion(1);
       }else{
         console.log("YOUR NOT QUIET CLOSE!.")
-        ask_question(0);
+        askQuestion(0);
       }
 
       saveGame();
@@ -286,16 +286,16 @@ function ask_question(question_number){      //Starts runs the game
         score += 10;
         console.log("Current score is..." + score);
         answer = prompt.question("Please press enter to continue...");
-        ask_question(2);
+        askQuestion(2);
       } else if (answer == "kenya" || answer == "ethiopia" || answer == "somalia" || answer == "rwanda") {
         console.log("\nYOU'RE NOT QUITE CLOSE!");
         console.log("Your current score is... " + score);
         console.log("Uganda was the answer!");
         answer = prompt.question("Please press enter to continue...")
-         ask_question(2);
+         askQuestion(2);
       }else{
         console.log("That didn't work, please try again. ");  
-         ask_question(1);
+         askQuestion(1);
       }
       saveGame();
 
@@ -323,16 +323,16 @@ function ask_question(question_number){      //Starts runs the game
         score += 10;
         console.log("Current score is..." + score);
         answer = prompt.question("Please press enter for the next round...");
-        ask_question(3);
+        askQuestion(3);
       } else if (answer == "east" || answer == "central" || answer == "west" ) { //duvall - lowercase the answer
         console.log("\nYOU'RE NOT QUITE CLOSE!");
         console.log("Current score is..." + score);
         console.log("North was the answer!");
         answer = prompt.question("Please press enter for the next round...");
-         ask_question(3);
+         askQuestion(3);
       }else{
         console.log("That didn't work, please try again. ")  
-       ask_question(2)
+       askQuestion(2)
       }
       saveGame();
 
@@ -372,7 +372,7 @@ function ask_question(question_number){      //Starts runs the game
         fireRound("start"); //start of fire round below
       }else{
         console.log("That didn't work, please try again. ")  
-         ask_question(3); //replays Q if answer is not given/wrong
+         askQuestion(3); //replays Q if answer is not given/wrong
       }
       saveGame();
 
@@ -646,7 +646,7 @@ function fireRound(question_number) {
 }
 
 //fireRound("start"); //purely for testing fire round
-ask_question("start");
+askQuestion("start");
 
 
 
