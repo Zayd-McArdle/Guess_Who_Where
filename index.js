@@ -7,8 +7,8 @@ HAVE FUN LEARNING.*/
 
 let prompt = require('readline-sync');
 const fs = require('fs');
-let points= {Rookie: "25 points", Amateur: "45 points", All_star: "65 points", Superstar: "85 points", Master: "100 points"};//This will be given to the user at the start of the game and at the end to reveal the user's results.
-let current_question = 1;
+let points= {rookie: "25 points", amateur: "45 points", allStar: "65 points", superstar: "85 points", master: "100 points"};//This will be given to the user at the start of the game and at the end to reveal the user's results.
+let currentQuestion = 1;
 const array = ["CONGRATULATIONS!"];
 // This will suggest the first round of the game.
 function guess(){
@@ -30,8 +30,8 @@ function saveGame(){
 }
 
 function loadGame(){
- let raw_data = fs.readFlieSync('save_file.txt');
-  score = JSON.parse(raw_data);
+  let rawData = fs.readFlieSync('save_file.txt');
+  score = JSON.parse(rawData);
 }
 
 function flame() {
@@ -74,23 +74,23 @@ let score = 0;
 let facts ={A:"Italy is one of the oldest western counties",
             B:"Italy is the fifth largest country in Europe",
             C:"pizza was intevested in rome"}
-let facts_2 ={A:" Rome",
+let facts2 ={A:" Rome",
              B:" Florence",
              C:" Milan"} 
 
-let facts_3 ={A:" Italy has the oldest population in Europe",
+let facts3 ={A:" Italy has the oldest population in Europe",
  B:" Rome is over 1,000 years old",
  C: " Italy's flag is green, blue and red"} 
 // I'm using an object to store questions for the fire round 
-let facts_4 ={A:"Italy is the first most visited country in the world",
+let facts4 ={A:"Italy is the first most visited country in the world",
 B: " Italy's last king ruled for just 34 days",
 C: "Italians eat ice cream for dessert"}
 
-let facts_5 ={A:"Uganda has the world’s youngest population!" ,
+let facts5 ={A:"Uganda has the world’s youngest population!" ,
 B: "Lake Victoria is the smallest lake in Uganda",
 C: "80% of the Ugandans are Muslims"}
 
-let facts_6 ={A:"Kenya is home to Africa's second-highest mountain", B:"Sudan is a country in East-Africa", C:"Ethiopia native language is Arabic"}
+let facts6 ={A:"Kenya is home to Africa's second-highest mountain", B:"Sudan is a country in East-Africa", C:"Ethiopia native language is Arabic"}
 function africa() {
   console.log("");
   console.log("           _ /");
@@ -127,7 +127,7 @@ function askQuestion(){
 }
 
 
-let features = {face: "Black", facial: "Oval face shape",  hair_color: "Blacks/waves", Nose: "Nubian nose"};
+let features = {face: "Black", facial: "Oval face shape",  hairColor: "Blacks/waves", nose: "Nubian nose"};
 
 //('\x1b[32m%s\x1b[0m',  'Africa     South America      North America');
 //console.log("/x1b[31m/s")
@@ -188,9 +188,9 @@ function delay(message,time){
   }, time);
 }
 
-function askQuestion(question_number){      //Starts runs the game
+function askQuestion(questionNumber){      //Starts runs the game
 
-  switch(question_number){
+  switch(questionNumber){
     case "start":
       console.clear() 
       guess();
@@ -200,11 +200,11 @@ function askQuestion(question_number){      //Starts runs the game
                                  textBox();
       //Displaying the type of options the user could get if completed the game.
       console.log('\x1b[33m%s\x1b[0m',   '\n**********************************   ');
-      console.log(" > Rookie:  " + points.Rookie); 
-      console.log(" > Amateur: " + points.Amateur);
-      console.log(" > All_star: " + points.All_star);
-      console.log(" > Superstar: "    + points.Superstar);
-      console.log(" > Master: " + points.Master);    
+      console.log(" > rookie:  " + points.rookie); 
+      console.log(" > amateur: " + points.amateur);
+      console.log(" > allStar: " + points.allStar);
+      console.log(" > superstar: "    + points.superstar);
+      console.log(" > master: " + points.master);    
       //Throughout the game the user will get their score displayed to them
 
       console.log('\x1b[33m%s\x1b[0m',   '**********************************   ');
@@ -223,15 +223,15 @@ function askQuestion(question_number){      //Starts runs the game
 
 
       answer = prompt.question("Question 1");
-      current_question++;
+      currentQuestion++;
       console.log('\x1b[32m%s\x1b[0m',  'From the list of features, What continent best describes where I \nmight possibly be from?');
       saveGame();
       answer = prompt.question("Press any key to continue\n")
       console.log('\x1b[33m%s\x1b[0m',   '----------------------   ');
       console.log ("> Race: "  +  features. face);
       console.log ("> Facial: "  +features. facial);
-      console.log ("> Hair_color: "  +features.hair_color);
-      console.log ("> Nose_feature: "  +features. Nose);
+      console.log ("> hairColor: "  +features.hairColor);
+      console.log ("> nose_feature: "  +features. nose);
       console.log('\x1b[33m%s\x1b[0m',   '----------------------   ');options("");
 
       console.log('\x1b[32m%s\x1b[0m',  'Africa     South America      North America');
@@ -345,8 +345,8 @@ function askQuestion(question_number){      //Starts runs the game
       console.log('\x1b[33m%s\x1b[0m',   '----------------------   ');
       console.log ("> Race: White (olive skin) "  );
       console.log ("> Facial: Strong jawline "  );       
-      console.log ("> Hair_color: Dark hair "  );
-      console.log ("> Nose_feature:Roman nose");
+      console.log ("> hairColor: Dark hair "  );
+      console.log ("> nose_feature:Roman nose");
       console.log('\x1b[33m%s\x1b[0m',   '----------------------');
 
       flag("");
@@ -388,12 +388,12 @@ let fireRoundTracker = 0 //keeps track of how many times function has been used
 
 function generateNumber(){
   //Math.floor(Math.random() * (MAX - MIN) + MIN);
-  let question_math = Math.floor(Math.random() * (4 - 0) + 0);
-  if (fireRoundTally[question_math] == question_math){ //if the random num is equal to the index of the array
-    fireRoundTally.splice(question_math, 1, -1); //replaces the index with -1 so it can no longer come up again
+  let questionMath = Math.floor(Math.random() * (4 - 0) + 0);
+  if (fireRoundTally[questionMath] == questionMath){ //if the random num is equal to the index of the array
+    fireRoundTally.splice(questionMath, 1, -1); //replaces the index with -1 so it can no longer come up again
     fireRoundTracker += 1 //adds one to tracker each time function is ran
     console.log(fireRoundTally); //to check it has been removed
-    return fireRound(question_math); //the random number only gets passed once to the random fire round function to make sure the same question doesn't come up again
+    return fireRound(questionMath); //the random number only gets passed once to the random fire round function to make sure the same question doesn't come up again
   }
   else if (fireRoundTracker >= 4){ //runs if the tracker has reached 3
     fireRound("last question"); //calls the very last question
@@ -404,8 +404,8 @@ function generateNumber(){
   }
 }
 
-function fireRound(question_number) {
-  switch(question_number){
+function fireRound(questionNumber) {
+  switch(questionNumber){
     case "start":
       console.clear();
       //console.log(fireRoundTracker);(used for testing)
@@ -415,7 +415,7 @@ function fireRound(question_number) {
       console. log('\x1b[32m%s\x1b[0m',  'I grew up in a rich culture filled with the most lively of people, who loved eating gelato and pasta all day long. My city is home to many tours...?');
       prompt.question("Press any key to continue\n") 
       flame();
-      console.log(facts_2)
+      console.log(facts2)
       answer = prompt.question("Please enter A or B or C...\n");
       answer = answer.toLowerCase();
       if (answer == "a") {
@@ -481,7 +481,7 @@ function fireRound(question_number) {
       console.log('\x1b[32m%s\x1b[0m',  'Which statement is correct about my country?');
       //console.log("Case 1"); (used for testing)
       flame();
-      console.log(facts_3);
+      console.log(facts3);
       answer = prompt.question("Please enter A or B or C...\n");
       answer = answer.toLowerCase();
       if (answer == "a") {
@@ -515,7 +515,7 @@ function fireRound(question_number) {
       console.log('\x1b[32m%s\x1b[0m',  'Which statement is correct about my country?');
       //console.log("Case 2"); (used for testing)
       flame(); //displays asci art of flame
-      console.log(facts_4);
+      console.log(facts4);
       answer = prompt.question("Please enter A or B or C...\n");
       answer = answer.toLowerCase();
       if (answer == "b") {
@@ -548,7 +548,7 @@ function fireRound(question_number) {
       console.log('\x1b[32m%s\x1b[0m',  'Which statement is correct about my country?');
       //console.log("Case 3"); (used for testing)
       flame();
-      console.log(facts_5);
+      console.log(facts5);
       answer = prompt.question("Please enter A or B or C...\n");
       answer = answer.toLowerCase();
       if (answer == "a") {
@@ -578,7 +578,7 @@ function fireRound(question_number) {
       answer = prompt.question("Question..");
       console.log('\x1b[32m%s\x1b[0m',  'Which statement is correct about my country?');
       flame();
-      console.log(facts_6);
+      console.log(facts6);
       answer = prompt.question("Please enter A or B or C...\n");
       answer = answer.toLowerCase();
       if (answer == "a") {
@@ -617,7 +617,7 @@ function fireRound(question_number) {
       else if (score >= 45 && score <= 65){
         console.clear();
          worldGlobe();
-        console.log("You're a Amateur");
+        console.log("You're a amateur");
       }
       else if (score >= 65 && score <= 85){
         console.clear();
@@ -627,7 +627,7 @@ function fireRound(question_number) {
       else if (score >= 85 && score <= 99){
         console.clear();
         worldGlobe();
-        console.log("You're a Superstar");
+        console.log("You're a superstar");
       }
       else if (score >= 100){
         console.clear();
