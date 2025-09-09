@@ -23,7 +23,7 @@ function guess(){
   console.log("     \"Y88P\"         "); 
 }
 
-function save_game(){
+function saveGame(){
   const content = { score : score };
   const write = JSON.stringify(content);
   const data = fs.writeFileSync('save _file.txt', write);
@@ -228,7 +228,7 @@ function ask_question(question_number){      //Starts runs the game
       answer = prompt.question("Question 1");
       current_question++;
       console.log('\x1b[32m%s\x1b[0m',  'From the list of features, What continent best describes where I \nmight possibly be from?');
-      save_game();
+      saveGame();
       answer = prompt.question("Press any key to continue\n")
       console.log('\x1b[33m%s\x1b[0m',   '----------------------   ');
       console.log ("> Race: "  +  features. face);
@@ -258,7 +258,7 @@ function ask_question(question_number){      //Starts runs the game
         ask_question(0);
       }
 
-      save_game();
+      saveGame();
 
     break;
 
@@ -297,7 +297,7 @@ function ask_question(question_number){      //Starts runs the game
         console.log("That didn't work, please try again. ");  
          ask_question(1);
       }
-      save_game();
+      saveGame();
 
     break;
 
@@ -334,7 +334,7 @@ function ask_question(question_number){      //Starts runs the game
         console.log("That didn't work, please try again. ")  
        ask_question(2)
       }
-      save_game();
+      saveGame();
 
 
 
@@ -374,7 +374,7 @@ function ask_question(question_number){      //Starts runs the game
         console.log("That didn't work, please try again. ")  
          ask_question(3); //replays Q if answer is not given/wrong
       }
-      save_game();
+      saveGame();
 
 
     break;
@@ -438,7 +438,7 @@ function fireRound(question_number) {
         console.log("That didn't work, please try again. ")  
           fireRound(0);
         }
-      save_game();
+      saveGame();
 
     break;
 
@@ -470,7 +470,7 @@ function fireRound(question_number) {
         console.log("That didn't work, please enter A or B or C. ")  
           fireRound(0);
         }
-      save_game();
+      saveGame();
 
 
 
@@ -504,7 +504,7 @@ function fireRound(question_number) {
         console.log("That didn't work, please try again. ")  
           fireRound(1);
         }
-      save_game();
+      saveGame();
 
 
 
@@ -537,7 +537,7 @@ function fireRound(question_number) {
         console.log("That didn't work, please try again. ")  
          fireRound(2);
         }
-      save_game();
+      saveGame();
 
 
       break;
@@ -571,7 +571,7 @@ function fireRound(question_number) {
         console.log("That didn't work, please try again. ")  
         fireRound(3);
       }
-      save_game();
+      saveGame();
 
 
       break;
@@ -601,7 +601,7 @@ function fireRound(question_number) {
         console.log("That didn't work, please try again. ")  
          fireRound("Last question");
       }
-      save_game();
+      saveGame();
 
 
       break;
