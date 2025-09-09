@@ -5,10 +5,10 @@ Type in the required answer below for each question.
 HAVE FUN LEARNING.*/
 
 
-var prompt = require('readline-sync');
+let prompt = require('readline-sync');
 const fs = require('fs');
-var points= {Rookie: "25 points", Amateur: "45 points", All_star: "65 points", Superstar: "85 points", Master: "100 points"};//This will be given to the user at the start of the game and at the end to reveal the user's results.
-var current_question = 1;
+let points= {Rookie: "25 points", Amateur: "45 points", All_star: "65 points", Superstar: "85 points", Master: "100 points"};//This will be given to the user at the start of the game and at the end to reveal the user's results.
+let current_question = 1;
 const array = ["CONGRATULATIONS!"];
 // This will suggest the first round of the game.
 function guess(){
@@ -70,27 +70,27 @@ for(let i = 0; i < 5; i ++){
   console.log(array);
 }//if 0 is less than 5 which it is then it will run the array
 
-var score = 0;
-var facts ={A:"Italy is one of the oldest western counties",
+let score = 0;
+let facts ={A:"Italy is one of the oldest western counties",
             B:"Italy is the fifth largest country in Europe",
             C:"pizza was intevested in rome"}
-var facts_2 ={A:" Rome",
+let facts_2 ={A:" Rome",
              B:" Florence",
              C:" Milan"} 
 
-var facts_3 ={A:" Italy has the oldest population in Europe",
+let facts_3 ={A:" Italy has the oldest population in Europe",
  B:" Rome is over 1,000 years old",
  C: " Italy's flag is green, blue and red"} 
 // I'm using an object to store questions for the fire round 
-var facts_4 ={A:"Italy is the first most visited country in the world",
+let facts_4 ={A:"Italy is the first most visited country in the world",
 B: " Italy's last king ruled for just 34 days",
 C: "Italians eat ice cream for dessert"}
 
-var facts_5 ={A:"Uganda has the world’s youngest population!" ,
+let facts_5 ={A:"Uganda has the world’s youngest population!" ,
 B: "Lake Victoria is the smallest lake in Uganda",
 C: "80% of the Ugandans are Muslims"}
 
-var facts_6 ={A:"Kenya is home to Africa's second-highest mountain", B:"Sudan is a country in East-Africa", C:"Ethiopia native language is Arabic"}
+let facts_6 ={A:"Kenya is home to Africa's second-highest mountain", B:"Sudan is a country in East-Africa", C:"Ethiopia native language is Arabic"}
 function africa() {
   console.log("");
   console.log("           _ /");
@@ -127,7 +127,7 @@ function askQuestion(){
 }
 
 
-var features = {face: "Black", facial: "Oval face shape",  hair_color: "Blacks/waves", Nose: "Nubian nose"};
+let features = {face: "Black", facial: "Oval face shape",  hair_color: "Blacks/waves", Nose: "Nubian nose"};
 
 //('\x1b[32m%s\x1b[0m',  'Africa     South America      North America');
 //console.log("/x1b[31m/s")
@@ -383,12 +383,12 @@ function askQuestion(question_number){      //Starts runs the game
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-var fireRoundTally = [0,1,2,3] //keep track of questions that have been used
-var fireRoundTracker = 0 //keeps track of how many times function has been used
+let fireRoundTally = [0,1,2,3] //keep track of questions that have been used
+let fireRoundTracker = 0 //keeps track of how many times function has been used
 
 function generateNumber(){
   //Math.floor(Math.random() * (MAX - MIN) + MIN);
-  var question_math = Math.floor(Math.random() * (4 - 0) + 0);
+  let question_math = Math.floor(Math.random() * (4 - 0) + 0);
   if (fireRoundTally[question_math] == question_math){ //if the random num is equal to the index of the array
     fireRoundTally.splice(question_math, 1, -1); //replaces the index with -1 so it can no longer come up again
     fireRoundTracker += 1 //adds one to tracker each time function is ran
