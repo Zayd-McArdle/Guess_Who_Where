@@ -5,6 +5,7 @@ Type in the required answer below for each question.
 HAVE FUN LEARNING.*/
 import { africa, uganda } from './modules/countries';
 import { worldGlobe, flame, flag,  } from './modules/print-shapes';
+import { saveGame, loadGame } from './modules/game-management';
 let prompt = require('readline-sync');
 const fs = require('fs');
 let points= {rookie: "25 points", amateur: "45 points", allStar: "65 points", superstar: "85 points", master: "100 points"};//This will be given to the user at the start of the game and at the end to reveal the user's results.
@@ -21,18 +22,6 @@ function guess(){
   console.log("         888                                              \"╋╋┗┛\\");
   console.log("   Y8b d88P         ");                        
   console.log("     \"Y88P\"         "); 
-}
-
-function saveGame(score){
-  const content = { score : score };
-  const write = JSON.stringify(content);
-  const data = fs.writeFileSync('save _file.txt', write);
-}
-
-function loadGame(score){
-  let rawData = fs.readFlieSync('save_file.txt');
-  score = JSON.parse(rawData);
-  return score;
 }
 
 flag();
