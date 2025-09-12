@@ -3,7 +3,7 @@ your task is to guess the different features that many people have from differen
 How to play
 Type in the required answer below for each question.
 HAVE FUN LEARNING.*/
-
+import { africa, uganda } from './modules/countries';
 
 let prompt = require('readline-sync');
 const fs = require('fs');
@@ -91,32 +91,6 @@ B: "Lake Victoria is the smallest lake in Uganda",
 C: "80% of the Ugandans are Muslims"}
 
 let facts6 ={A:"Kenya is home to Africa's second-highest mountain", B:"Sudan is a country in East-Africa", C:"Ethiopia native language is Arabic"}
-function africa() {
-  console.log("");
-  console.log("           _ /");
-  console.log("   /\----_- - ");
-  console.log("  /         \\ ");
-  console.log(" /           \\  ");
-  console.log(" |            \\_ ");
-  console.log(" \___-_        /   ");
-  console.log("       \       /     ");
-  console.log("        |     |     ");
-  console.log("        |     \\  ");
-  console.log("         \__/        Africa ");
-}
-function uganda() {
-  console.log("");
-  console.log("           _ /");
-  console.log("   /\----_- - ");
-  console.log("  /         \\ ");
-  console.log(" /           \\  ");
-  console.log(" |            \\_ ");
-  console.log(" \___-_        /   ");
-  console.log("       \       /     ");
-  console.log("        |     |     ");
-  console.log("        |     \\  ");
-  console.log("         \__/        Uganda ");
-}
 function askQuestion(){
     answer = prompt.question("Please type in your answer...").toLowerCase();
     if (answer == "africa") {
