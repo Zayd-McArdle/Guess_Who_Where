@@ -64,7 +64,7 @@ let features = {face: "Black", facial: "Oval face shape",  hairColor: "Blacks/wa
 
 //('\x1b[32m%s\x1b[0m',  'Africa     South America      North America');
 //console.log("/x1b[31m/s")
-function options(){
+function showAfricaSouthAndNorthAmericaContinents(){
   console.log("");
   console.log(".--.___            ._            _,.__,.___.");
   console.log("/       \         .'  `-._       >_.._       >  _");
@@ -151,7 +151,7 @@ function askQuestion(questionNumber){      //Starts runs the game
       console.log ("> Facial: "  +features. facial);
       console.log ("> hairColor: "  +features.hairColor);
       console.log ("> nose_feature: "  +features. nose);
-      console.log('\x1b[33m%s\x1b[0m',   '----------------------   ');options("");
+      console.log('\x1b[33m%s\x1b[0m',   '----------------------   ');showAfricaSouthAndNorthAmericaContinents();
 
       console.log('\x1b[32m%s\x1b[0m',  'Africa     South America      North America');
       answer = prompt.question("Type in your answer\n").toLowerCase();
