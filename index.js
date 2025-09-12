@@ -23,15 +23,16 @@ function guess(){
   console.log("     \"Y88P\"         "); 
 }
 
-function saveGame(){
+function saveGame(score){
   const content = { score : score };
   const write = JSON.stringify(content);
   const data = fs.writeFileSync('save _file.txt', write);
 }
 
-function loadGame(){
+function loadGame(score){
   let rawData = fs.readFlieSync('save_file.txt');
   score = JSON.parse(rawData);
+  return score;
 }
 
 flag();
@@ -154,7 +155,7 @@ function askQuestion(questionNumber){      //Starts runs the game
       answer = prompt.question("Question 1");
       currentQuestion++;
       console.log('\x1b[32m%s\x1b[0m',  'From the list of features, What continent best describes where I \nmight possibly be from?');
-      saveGame();
+      saveGame(score);
       answer = prompt.question("Press any key to continue\n")
       console.log('\x1b[33m%s\x1b[0m',   '----------------------   ');
       console.log ("> Race: "  +  features. face);
@@ -183,7 +184,7 @@ function askQuestion(questionNumber){      //Starts runs the game
         askQuestion(0);
       }
 
-      saveGame();
+      saveGame(score);
 
       break;
 
@@ -222,7 +223,7 @@ function askQuestion(questionNumber){      //Starts runs the game
         console.log("That didn't work, please try again. ");  
          askQuestion(1);
       }
-      saveGame();
+      saveGame(score);
 
     break;
 
@@ -259,7 +260,7 @@ function askQuestion(questionNumber){      //Starts runs the game
         console.log("That didn't work, please try again. ")  
        askQuestion(2)
       }
-      saveGame();
+      saveGame(score);
 
 
 
@@ -299,7 +300,7 @@ function askQuestion(questionNumber){      //Starts runs the game
         console.log("That didn't work, please try again. ")  
          askQuestion(3); //replays Q if answer is not given/wrong
       }
-      saveGame();
+      saveGame(score);
 
 
     break;
@@ -363,7 +364,7 @@ function fireRound(questionNumber) {
         console.log("That didn't work, please try again. ")  
           fireRound(0);
         }
-      saveGame();
+      saveGame(score);
 
     break;
 
@@ -395,7 +396,7 @@ function fireRound(questionNumber) {
         console.log("That didn't work, please enter A or B or C. ")  
           fireRound(0);
         }
-      saveGame();
+      saveGame(score);
 
 
 
@@ -429,7 +430,7 @@ function fireRound(questionNumber) {
         console.log("That didn't work, please try again. ")  
           fireRound(1);
         }
-      saveGame();
+      saveGame(score);
 
 
 
@@ -462,7 +463,7 @@ function fireRound(questionNumber) {
         console.log("That didn't work, please try again. ")  
          fireRound(2);
         }
-      saveGame();
+      saveGame(score);
 
 
       break;
@@ -496,7 +497,7 @@ function fireRound(questionNumber) {
         console.log("That didn't work, please try again. ")  
         fireRound(3);
       }
-      saveGame();
+      saveGame(score);
 
 
       break;
@@ -526,7 +527,7 @@ function fireRound(questionNumber) {
         console.log("That didn't work, please try again. ")  
          fireRound("Last question");
       }
-      saveGame();
+      saveGame(score);
 
 
       break;
