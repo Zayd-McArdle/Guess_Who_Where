@@ -3,7 +3,7 @@ your task is to guess the different features that many people have from differen
 How to play
 Type in the required answer below for each question.
 HAVE FUN LEARNING.*/
-import { africa, uganda } from './modules/countries';
+import { africa, uganda, showAfricaSouthAndNorthAmericaContinents } from './modules/countries-and-continents';
 import { worldGlobe, flame, flag,  } from './modules/print-shapes';
 import { saveGame, loadGame } from './modules/game-management';
 let prompt = require('readline-sync');
@@ -62,19 +62,7 @@ function askQuestion(){
 
 let features = {face: "Black", facial: "Oval face shape",  hairColor: "Blacks/waves", nose: "Nubian nose"};
 
-//('\x1b[32m%s\x1b[0m',  'Africa     South America      North America');
-//console.log("/x1b[31m/s")
-function showAfricaSouthAndNorthAmericaContinents(){
-  console.log("");
-  console.log(".--.___            ._            _,.__,.___.");
-  console.log("/       \         .'  `-._       >_.._       >  _");
-  console.log("(         \_       `.      7           \     '-.| \ ");
-  console.log("`--.       7        `   _/             )        _> ");
-  console.log("    <     /         |  (               (     _ / ");
-  console.log("   )    )          ) /                 `\. C.`");
-  console.log("\   / /         (/                     ~-.\ ");
-  console.log("~-~                                      ` ");
-}
+
 
 function coins(rules){
 
