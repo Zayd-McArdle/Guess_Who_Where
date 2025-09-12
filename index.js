@@ -4,7 +4,7 @@ How to play
 Type in the required answer below for each question.
 HAVE FUN LEARNING.*/
 import { africa, uganda } from './modules/countries';
-
+import { worldGlobe, flame, flag,  } from './modules/print-shapes';
 let prompt = require('readline-sync');
 const fs = require('fs');
 let points= {rookie: "25 points", amateur: "45 points", allStar: "65 points", superstar: "85 points", master: "100 points"};//This will be given to the user at the start of the game and at the end to reveal the user's results.
@@ -32,37 +32,6 @@ function saveGame(){
 function loadGame(){
   let rawData = fs.readFlieSync('save_file.txt');
   score = JSON.parse(rawData);
-}
-
-function flame() {
-  console.log("");
-  console.log(" ");
-  console.log("              (  .      )");
-  console.log("        )           (              )");
-  console.log("          .  '   .   '  .  '  .");
-  console.log("     (    , )       (.   )  (   ',    )");
-  console.log("   .' ) ( . )    ,  ( ,     )   ( .");
-  console.log("   ). , ( .   (  ) ( , ')  .' (  ,    )");
-  console.log("   (_,) . ), ) _) _,')  (, ) '. )  ,. (' )");
-  console.log(" ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
-}
-
-function flag() {
-  console.log("");
-  console.log(" ");
-  console.log("                        /\"" );
-  console.log("                       /::\ ");
-  console.log("                      /::::\" ");
-  console.log("        ,a_a         /\::::/\" ");
-  console.log("       {/ ''\_      /\ \::/\ \" ");
-  console.log("       {\ ,_oo)    /\ \ \/\ \ \" ");
-  console.log("       {/  (_^____/  \ \ \ \ \ \" ");
-  console.log("  .=  {/ \___)))*)    \ \ \ \ \/");
-  console.log(" (.=.`\{/   /=;  ~/      \ \ \ \/");
-  console.log(" \ `\{/(   \/\  /        \ \ \/");
-  console.log(" \  `. `\  ) )           \ \/");
-  console.log("       // /_/_            \/");
-  console.log(" '==''---))))");
 }
 
 flag();
@@ -120,20 +89,6 @@ function options(){
 function coins(rules){
 
 }
-function worldGlobe(text){
-    console.log("");
-    console.log("");
-    console.log("          ,-:` \\;\\',`'-, ");
-    console.log("       .\\'-;_,;  ':-;_,'.");
-    console.log("       /;   \\'/    ,  _`.-\\");
-    console.log("      | \\'`. (`     /` ` \\`|");
-    console.log("      |:.  `\\`-.   \\_   / |");
-    console.log("      |     (   `,  .`\\ ;\\'|");
-    console.log("       \     | .'     `-\\'/");
-    console.log("        `.   ;/       .'");
-    console.log("           ` '-._____.");
-}
-
 
 //World globe
 function textBox(text){
