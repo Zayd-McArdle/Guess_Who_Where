@@ -118,11 +118,11 @@ function uganda() {
   console.log("         \__/        Uganda ");
 }
 function askQuestion(){
-    answer = prompt.question("Please type in your answer...");
-    if(answer ==  "Africa" || answer == "africa"){
+    answer = prompt.question("Please type in your answer...").toLowerCase();
+    if (answer == "africa") {
       console.log("YOU WERE RIGHT!");
-    }else if(answer == "South africa" || answer == "North africa"){ 
-       console.log("YOUR NOT QUIET CLOSE!");
+    } else if(answer == "south africa" || answer == "north africa"){ 
+       console.log("YOU'RE NOT QUITE CLOSE!");
     }
 }
 
@@ -213,7 +213,7 @@ function askQuestion(questionNumber){      //Starts runs the game
 
       answer = prompt.question("Please press enter to continue \n");
       askQuestion(0); 
-    break;
+      break;
 
     case 0: //Choice of which continents.
 
@@ -235,8 +235,7 @@ function askQuestion(questionNumber){      //Starts runs the game
       console.log('\x1b[33m%s\x1b[0m',   '----------------------   ');options("");
 
       console.log('\x1b[32m%s\x1b[0m',  'Africa     South America      North America');
-      answer = prompt.question("Type in your answer\n");
-      answer = answer.toLowerCase(); 
+      answer = prompt.question("Type in your answer\n").toLowerCase();
       if(answer == "africa"){
         console.log("\nYOU WERE RIGHT!");
         console.log("You scored 10 points");
@@ -244,20 +243,20 @@ function askQuestion(questionNumber){      //Starts runs the game
         console.log("Current score is... " + score);
         answer = prompt.question("Please press enter to continue...");
         askQuestion(1);
-      }else if (answer == "south america" || answer == "north america"){
+      } else if (answer == "south america" || answer == "north america"){
         console.log("\nYOUR NOT QUITE CLOSE!.");
         console.log("Africa was the answer!");
         console.log("Current score is... " + score);
         answer = prompt.question("Please press enter to continue...");
         askQuestion(1);
-      }else{
+      } else{
         console.log("YOUR NOT QUIET CLOSE!.")
         askQuestion(0);
       }
 
       saveGame();
 
-    break;
+      break;
 
     case 1:
       //This bit of code keeps track of the current question and displays it to the user, copy and paste at the beginning of each question.
